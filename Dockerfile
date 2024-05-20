@@ -22,7 +22,9 @@ RUN git clone https://github.com/ggerganov/llama.cpp \
     && cd build && make -j$(nproc) && make install \
     && cd / && rm -rf llama-cpp
 
-COPY /sakura-1b8-qwen2beta-v0.9.1-fp16.gguf /model.gguf
+
+ARG LLAMA_CPP_MODEL_URL
+RUN curl -L "${LLAMA_CPP_MODEL_URL}" -o /model.gguf
 
 COPY /supervisor-conf.d /etc/supervisor/conf.d
 COPY /workspace /workspace
