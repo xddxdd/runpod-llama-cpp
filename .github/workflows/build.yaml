@@ -21,7 +21,7 @@ jobs:
         with:
           root-reserve-mb: 512
           swap-size-mb: 1024
-          build-mount-path: '/nix'
+          build-mount-path: '/var/lib/docker'
           remove-dotnet: 'true'
           remove-android: 'true'
           remove-haskell: 'true'
