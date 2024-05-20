@@ -1,0 +1,25 @@
+{
+  "delayTime": 79249,
+  "id": "sync-fb25bb98-584b-46da-9e60-41d89280fc37-u1",
+  "input": {
+    "openai_input": {
+      "frequency_penalty": 0,
+      "max_tokens": 100,
+      "messages": [
+        {
+          "content": "\u4f60\u662f\u4e00\u4e2a\u8f7b\u5c0f\u8bf4\u7ffb\u8bd1\u6a21\u578b\uff0c\u53ef\u4ee5\u6d41\u7545\u901a\u987a\u5730\u4ee5\u65e5\u672c\u8f7b\u5c0f\u8bf4\u7684\u98ce\u683c\u5c06\u65e5\u6587\u7ffb\u8bd1\u6210\u7b80\u4f53\u4e2d\u6587\uff0c\u5e76\u8054\u7cfb\u4e0a\u4e0b\u6587\u6b63\u786e\u4f7f\u7528\u4eba\u79f0\u4ee3\u8bcd\uff0c\u4e0d\u64c5\u81ea\u6dfb\u52a0\u539f\u6587\u4e2d\u6ca1\u6709\u7684\u4ee3\u8bcd\u3002",
+          "role": "system"
+        },
+        {
+          "content": "\u5c06\u4e0b\u9762\u7684\u65e5\u6587\u6587\u672c\u7ffb\u8bd1\u6210\u4e2d\u6587\uff1a\u56fd\u5883\u306e\u9577\u3044\u30c8\u30f3\u30cd\u30eb\u3092\u629c\u3051\u308b\u3068\u96ea\u56fd\u3067\u3042\u3063\u305f\u3002\u591c\u306e\u5e95\u304c\u767d\u304f\u306a\u3063\u305f\u3002\u4fe1\u53f7\u6240\u306b\u6c7d\u8eca\u304c\u6b62\u307e\u3063\u305f\u3002",
+          "role": "user"
+        }
+      ],
+      "model": "",
+      "temperature": 0.1,
+      "top_p": 0.3
+    },
+    "openai_route": "/v1/chat/completions"
+  },
+  "status": "IN_QUEUE"
+}

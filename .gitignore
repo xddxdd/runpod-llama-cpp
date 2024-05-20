@@ -1,0 +1,4 @@
+.hypothesis/
+.DS_Store
+venv
+*.gguf
