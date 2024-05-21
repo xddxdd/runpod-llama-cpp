@@ -14,28 +14,31 @@ BASE_URL = "http://127.0.0.1:3000"
 def handle_request(r):
     r.raise_for_status()
     result = r.json()
-    logging.info(json.dumps(result))
+    logging.debug(json.dumps(result))
     return result
 
 
 async def handler(event):
+    result = None
     try:
-        logging.info(f"Handling event {event}")
+        logging.debug(f"Handling event {event}")
         inp = event["input"]
         openai_route = inp.get("openai_route")
         if openai_route:
             r = requests.post(BASE_URL + openai_route, json=inp["openai_input"])
             # For some reason OpenAI endpoints doesn't work unless we return a generator
-            yield handle_request(r)
+            result = handle_request(r)
 
         r = requests.post(BASE_URL + "/completion", json=inp)
         # For some reason OpenAI endpoints doesn't work unless we return a generator
-        yield handle_request(r)
+        result = handle_request(r)
 
     except Exception as e:
         logging.exception(f"Failed to handle event {event}")
         # For some reason OpenAI endpoints doesn't work unless we return a generator
-        yield {"error": repr(e)}
+        result = {"error": repr(e)}
+
+    yield result
 
 
 if __name__ == "__main__":

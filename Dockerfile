@@ -24,7 +24,7 @@ RUN git clone https://github.com/ggerganov/llama.cpp \
 
 
 ARG LLAMA_CPP_MODEL_URL
-RUN curl -L "${LLAMA_CPP_MODEL_URL}" -o /model.gguf
+RUN curl -L "${LLAMA_CPP_MODEL_URL}" -o "/$(basename "${LLAMA_CPP_MODEL_URL}" | cut -d'?' -f1).gguf"
 
 COPY /supervisor-conf.d /etc/supervisor/conf.d
 COPY /workspace /workspace
