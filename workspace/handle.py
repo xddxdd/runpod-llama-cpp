@@ -5,10 +5,12 @@ import requests
 import time
 import sys
 
+from unittest.mock import patch
+
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
-BASE_URL = "http://127.0.0.1:3000"
-# BASE_URL = "https://llama-cpp.lt-home-vm.xuyh0120.win"
+# BASE_URL = "http://127.0.0.1:3000"
+BASE_URL = "https://llama-cpp.lt-home-vm.xuyh0120.win"
 
 
 def handle_request(r):
@@ -55,4 +57,16 @@ if __name__ == "__main__":
             time.sleep(0.5)
 
     logging.info("Starting serverless handler")
-    runpod.serverless.start({"handler": handler, "return_aggregate_stream": True})
+    with patch("runpod.serverless.modules.rp_local.sys.exit") as mock:
+        mock.side_effect = lambda exit_code: (
+            sys.exit(exit_code)
+            if exit_code != 0
+            else logging.info("Ignoring sys.exit from serverless handler")
+        )
+        runpod.serverless.start({"handler": handler, "return_aggregate_stream": True})
+
+    logging.info(
+        "Serverless handler exited, waiting indefinitely to not consume GPU resources"
+    )
+    while True:
+        time.sleep(1)
