@@ -28,10 +28,10 @@ async def handler(event):
             r = requests.post(BASE_URL + openai_route, json=inp["openai_input"])
             # For some reason OpenAI endpoints doesn't work unless we return a generator
             result = handle_request(r)
-
-        r = requests.post(BASE_URL + "/completion", json=inp)
-        # For some reason OpenAI endpoints doesn't work unless we return a generator
-        result = handle_request(r)
+        else:
+            r = requests.post(BASE_URL + "/completion", json=inp)
+            # For some reason OpenAI endpoints doesn't work unless we return a generator
+            result = handle_request(r)
 
     except Exception as e:
         logging.exception(f"Failed to handle event {event}")
