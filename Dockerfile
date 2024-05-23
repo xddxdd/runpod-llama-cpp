@@ -29,4 +29,6 @@ RUN curl -L "${LLAMA_CPP_MODEL_URL}" -o "/$(basename "${LLAMA_CPP_MODEL_URL}" | 
 COPY /supervisor-conf.d /etc/supervisor/conf.d
 COPY /workspace /workspace
 
+EXPOSE 3000
+
 CMD ["/usr/bin/supervisord", "-n"]
