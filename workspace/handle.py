@@ -9,8 +9,8 @@ from unittest.mock import patch
 
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
-# BASE_URL = "http://127.0.0.1:3000"
-BASE_URL = "https://llama-cpp.lt-home-vm.xuyh0120.win"
+BASE_URL = "http://127.0.0.1:3000"
+# BASE_URL = "https://llama-cpp.lt-home-vm.xuyh0120.win"
 
 
 def handle_request(r):
