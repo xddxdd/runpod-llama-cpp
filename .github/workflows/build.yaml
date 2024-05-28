@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - image_tag: 'base'
+          - image_tag: 'latest'
             model_url: ''
           - image_tag: 'Sakura-14B-Qwen2beta-v0.9'
             model_url: 'https://huggingface.co/SakuraLLM/Sakura-14B-Qwen2beta-v0.9-GGUF/resolve/main/sakura-14b-qwen2beta-v0.9-iq4_xs_ver2.gguf?download=true'
