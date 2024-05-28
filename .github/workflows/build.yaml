@@ -12,6 +12,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - image_tag: 'base'
+            model_url: ''
           - image_tag: 'Sakura-14B-Qwen2beta-v0.9'
             model_url: 'https://huggingface.co/SakuraLLM/Sakura-14B-Qwen2beta-v0.9-GGUF/resolve/main/sakura-14b-qwen2beta-v0.9-iq4_xs_ver2.gguf?download=true'
           - image_tag: 'Sakura-14B-Qwen2beta-v0.9.1'
@@ -57,7 +59,7 @@ jobs:
         with:
           platforms: linux/amd64
           push: true
-          build-args: "LLAMA_CPP_MODEL_URL=${{ matrix.model_url }}"
+          build-args: 'LLAMA_CPP_MODEL_URL=${{ matrix.model_url }}'
           tags: |
             xddxdd/runpod-llama-cpp:${{ matrix.image_tag }}
             xddxdd/runpod-llama-cpp:${{ matrix.image_tag }}-gh${{ github.run_id }}
