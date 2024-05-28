@@ -13,6 +13,8 @@ jobs:
         include:
           - image_tag: 'Sakura-32B-Qwen2beta-v0.9'
             model_url: 'https://huggingface.co/SakuraLLM/Sakura-32B-Qwen2beta-v0.9-GGUF/resolve/main/sakura-32b-qwen2beta-v0.9-iq4xs.gguf?download=true'
+          - image_tag: 'Sakura-32B-Qwen2beta-v0.9.1'
+            model_url: 'https://huggingface.co/SakuraLLM/Sakura-32B-Qwen2beta-v0.9.1-GGUF/resolve/main/sakura-32b-qwen2beta-v0.9.1-iq4xs.gguf?download=true'
           - image_tag: 'Sakura-32B-Qwen2beta-v0.10pre1'
             model_url: 'https://huggingface.co/SakuraLLM/Sakura-32B-Qwen2beta-v0.10pre1-GGUF/resolve/main/sakura-32b-qwen2beta-v0.10pre1-iq4xs.gguf?download=true'
     steps:
