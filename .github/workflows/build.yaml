@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     strategy:
+      fail-fast: false
       matrix:
         include:
           - image_tag: 'Sakura-32B-Qwen2beta-v0.9'
