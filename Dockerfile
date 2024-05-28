@@ -1,4 +1,4 @@
-FROM runpod/pytorch:2.0.1-py3.10-cuda11.8.0-devel
+FROM runpod/base:0.6.2-cuda11.8.0
 
 RUN pip install runpod && rm -rf /root/.cache/pip
 RUN apt-get update \
